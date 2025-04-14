@@ -2,7 +2,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: app1
-  namespace: default
   labels:
     app: frontend
 spec:
@@ -17,7 +16,7 @@ spec:
     spec:
       containers:
         - name: app1
-          image: ganesh6498/dev1-app:19
+          image: ganesh6498/dev2-app:20
           ports:
             - containerPort: 80  # Fixed key name
 
@@ -28,7 +27,6 @@ apiVersion: v1
 kind: Service
 metadata:
   name: frontend-service
-  namespace: default
 spec:
   type: LoadBalancer
   selector:
